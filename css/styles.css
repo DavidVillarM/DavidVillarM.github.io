@@ -342,6 +342,34 @@ h2 {
   border-color: var(--border-strong);
 }
 
+.project-card-visual--shot {
+  padding: 0;
+  background: #0a0a0a;
+  align-items: stretch;
+}
+
+.project-screenshot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card-link:hover .project-screenshot {
+  transform: scale(1.04);
+}
+
+.project-card-visual--mobile {
+  background: #111111;
+}
+
+.project-card-visual--mobile .project-screenshot {
+  object-fit: contain;
+  object-position: center top;
+  padding: 16px 24px 0;
+}
+
 .project-card-info h3 {
   font-size: 1rem;
   font-weight: 600;

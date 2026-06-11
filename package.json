@@ -1,0 +1,12 @@
+{
+  "name": "mi-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio profesional de David Villar, desarrollador de software. Diseño minimalista inspirado en [gabrielvaldivia.com](https://www.gabrielvaldivia.com).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
