@@ -461,36 +461,41 @@ h2 {
 
 /* ---- About Section ---- */
 
+.about-section {
+  padding: var(--section-gap) 0;
+}
+
 .about-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 64px;
-  align-items: start;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
 }
 
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
+    align-items: start;
   }
 
   .about-photo-wrap {
     margin: 0 auto;
+    max-width: 280px;
   }
 }
 
 .about-photo-wrap {
-  width: 280px;
-  max-width: 100%;
+  width: 100%;
 }
 
 .about-photo {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 30% 35%;
   border-radius: var(--radius-lg);
-  filter: grayscale(100%) contrast(1.1);
+  filter: grayscale(100%) contrast(1.05);
   transition: filter 0.5s ease;
 }
 
@@ -499,42 +504,79 @@ h2 {
 }
 
 .about-content h2 {
-  margin-bottom: 24px;
-  max-width: 600px;
+  font-size: clamp(1.75rem, 3.2vw, 2.375rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  margin-bottom: 28px;
+  max-width: 34rem;
 }
 
-.about-content p {
-  color: var(--text-secondary);
+.about-lead {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 28px;
+  max-width: 36rem;
+}
+
+.about-lead a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--text-muted);
+  transition: text-decoration-color var(--transition);
+}
+
+.about-lead a:hover {
+  text-decoration-color: var(--text);
+}
+
+.about-list-label {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 16px;
-  max-width: 560px;
+  max-width: 36rem;
 }
 
 .about-list {
-  margin: 24px 0;
+  margin: 0 0 32px;
+  max-width: 36rem;
 }
 
 .about-list li {
   position: relative;
-  padding-left: 20px;
+  padding-left: 18px;
   color: var(--text-secondary);
-  margin-bottom: 8px;
-  font-size: 0.9375rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.about-list li:last-child {
+  margin-bottom: 0;
 }
 
 .about-list li::before {
-  content: "•";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--text-muted);
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text-muted);
 }
 
 .learn-more {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 500;
-  margin-top: 8px;
+  color: var(--text);
   transition: gap var(--transition);
 }
 
