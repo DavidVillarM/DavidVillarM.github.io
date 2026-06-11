@@ -97,7 +97,7 @@ window.PROJECTS = [
     id: "newton-opm",
     url: "https://github.com/DavidVillarM/newton-opm",
     type: "code",
-    featured: false,
+    featured: true,
     title: { es: "Newton OPM", en: "Newton OPM" },
     desc: {
       es: "Plugin WordPress: conducta, asistencia y exámenes",
@@ -113,7 +113,7 @@ window.PROJECTS = [
     id: "tuc-academic",
     url: "https://github.com/DavidVillarM/tucursillo-academic-system",
     type: "code",
-    featured: false,
+    featured: true,
     title: { es: "Tucursillo Academic", en: "Tucursillo Academic" },
     desc: {
       es: "Automatización académica para LearnDash",
@@ -128,7 +128,7 @@ window.PROJECTS = [
     id: "redeem",
     url: "https://github.com/DavidVillarM/tuc-redeem-codes",
     type: "code",
-    featured: false,
+    featured: true,
     title: { es: "TUC Redeem Codes", en: "TUC Redeem Codes" },
     desc: {
       es: "Códigos de canje para LearnDash Groups",
@@ -143,7 +143,7 @@ window.PROJECTS = [
     id: "viborita",
     url: "https://github.com/DavidVillarM/Juego-de-la-Viborita",
     type: "phone-code",
-    featured: true,
+    featured: false,
     title: { es: "Juego de la Viborita", en: "Snake Game" },
     desc: {
       es: "Snake clásico en ensamblador (EMU8086)",
