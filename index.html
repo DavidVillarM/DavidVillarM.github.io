@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="David Villar — Desarrollador de software. Estudiante de Ingeniería en Informática en Paraguay.">
+  <title>David Villar — Desarrollador de Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>DV</text></svg>">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-name">David Villar</a>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Overlay -->
+  <nav class="nav-overlay" aria-hidden="true">
+    <button class="nav-close" aria-label="Cerrar menú">&times;</button>
+    <div class="nav-links">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="work.html">Proyectos</a>
+      <a href="about.html">Sobre mí</a>
+    </div>
+    <div class="nav-social">
+      <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/david_villarm" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero container">
+      <h1 class="hero-headline fade-in">
+        Desarrollador de software<br>orientado a productos reales.
+      </h1>
+
+      <div class="project-carousel fade-in">
+        <!-- Registro de Estrellas -->
+        <article class="project-card">
+          <a href="https://github.com/DavidVillarM/Registro-de-Estrellas" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-purple"></div>
+              <div class="mockup-glow mockup-glow-blue"></div>
+              <div class="mockup mockup-laptop">
+                <div class="mockup-laptop-screen">
+                  <div class="code-preview">
+                    <span class="cm">// API .NET + React</span><br>
+                    <span class="kw">public class</span> <span class="fn">Estrella</span> {<br>
+                    &nbsp;&nbsp;<span class="kw">public string</span> Nombre { <span class="kw">get</span>; }<br>
+                    &nbsp;&nbsp;<span class="kw">public int</span> Puntos { <span class="kw">get</span>; }<br>
+                    }
+                  </div>
+                </div>
+                <div class="mockup-laptop-base"></div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>Registro de Estrellas</h3>
+              <p>Sistema full stack con API .NET, React y Docker</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Newton OPM -->
+        <article class="project-card">
+          <a href="https://github.com/DavidVillarM/newton-opm" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-green"></div>
+              <div class="mockup mockup-laptop">
+                <div class="mockup-laptop-screen">
+                  <div class="code-preview">
+                    <span class="cm">&lt;!-- WordPress Plugin --&gt;</span><br>
+                    <span class="kw">&lt;?php</span><br>
+                    <span class="fn">register_post_type</span>(<span class="str">'conducta'</span>);<br>
+                    <span class="fn">add_action</span>(<span class="str">'init'</span>, ...);<br>
+                    <span class="kw">?&gt;</span>
+                  </div>
+                </div>
+                <div class="mockup-laptop-base"></div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>Newton OPM</h3>
+              <p>Plugin WordPress para gestión académica integral</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Tucursillo -->
+        <article class="project-card">
+          <a href="https://github.com/DavidVillarM/tucursillo-academic-system" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-orange"></div>
+              <div class="mockup mockup-laptop">
+                <div class="mockup-laptop-screen">
+                  <div class="code-preview">
+                    <span class="cm">// LearnDash Automation</span><br>
+                    <span class="kw">function</span> <span class="fn">syncCourses</span>() {<br>
+                    &nbsp;&nbsp;<span class="kw">return</span> <span class="fn">fetch</span>(<span class="str">'/api/...'</span>);<br>
+                    }
+                  </div>
+                </div>
+                <div class="mockup-laptop-base"></div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>Tucursillo Academic</h3>
+              <p>Automatización académica para LearnDash</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Wordle -->
+        <article class="project-card">
+          <a href="https://github.com/DavidVillarM/wordlePPY.github.io" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-green"></div>
+              <div class="mockup mockup-phone">
+                <div class="mockup-phone-screen">
+                  <div class="code-preview" style="padding:8px;font-size:6px;text-align:center;padding-top:20px;">
+                    <span style="display:inline-block;width:14px;height:14px;background:#538d4e;border-radius:2px;margin:1px;"></span>
+                    <span style="display:inline-block;width:14px;height:14px;background:#b59f3b;border-radius:2px;margin:1px;"></span>
+                    <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span><br>
+                    <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span>
+                    <span style="display:inline-block;width:14px;height:14px;background:#538d4e;border-radius:2px;margin:1px;"></span>
+                    <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>Wordle PPY</h3>
+              <p>Clon del juego Wordle en JavaScript</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Calculadora Basal -->
+        <article class="project-card">
+          <a href="https://github.com/DavidVillarM/calculadoraBasal.github.io" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-blue"></div>
+              <div class="mockup mockup-phone">
+                <div class="mockup-phone-screen">
+                  <div class="code-preview" style="padding:8px;font-size:6px;text-align:center;padding-top:24px;">
+                    <span style="color:#888;font-size:8px;">Basal</span><br>
+                    <span style="color:#fff;font-size:14px;font-weight:bold;">1,420</span><br>
+                    <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">7</span>
+                    <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">8</span>
+                    <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">9</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>Calculadora Basal</h3>
+              <p>Calculadora metabólica en JavaScript</p>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <a href="work.html" class="view-all-link">
+        Ver todos los proyectos
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- About -->
+    <section class="section container fade-in">
+      <div class="about-grid">
+        <img src="assets/profile.png" alt="David Villar" class="about-photo" width="280" height="280">
+        <div class="about-content">
+          <h2>Construyo soluciones digitales que resuelven problemas reales.</h2>
+          <p>
+            Soy estudiante de Ingeniería en Informática en Newton Centro de Estudios, Paraguay.
+            Me especializo en desarrollo web, plugins WordPress y sistemas full stack con tecnologías
+            modernas como .NET, React y Docker.
+          </p>
+          <ul class="about-list">
+            <li>Desarrollo plugins WordPress para gestión académica y e-learning.</li>
+            <li>Construyo APIs y frontends con arquitecturas escalables.</li>
+            <li>Automatizo procesos educativos con integraciones LearnDash.</li>
+            <li>Entrego código limpio, documentado y listo para producción.</li>
+          </ul>
+          <a href="about.html" class="learn-more">
+            Conocer más
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="section container fade-in">
+      <div class="two-col">
+        <p class="section-label">Habilidades</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Java</span>
+          <span class="tag">C#</span>
+          <span class="tag">C / C++</span>
+          <span class="tag">PHP</span>
+          <span class="tag">React</span>
+          <span class="tag">.NET</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">Docker</span>
+          <span class="tag">HTML & CSS</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach -->
+    <section class="section container fade-in">
+      <div class="two-col">
+        <p class="section-label">Enfoque</p>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <p class="number">01</p>
+            <h4>Producto primero.</h4>
+            <p>Cada línea de código debe resolver un problema concreto del usuario final.</p>
+          </div>
+          <div class="approach-item">
+            <p class="number">02</p>
+            <h4>Iteración rápida.</h4>
+            <p>Prefiero entregar versiones funcionales temprano y mejorar con feedback real.</p>
+          </div>
+          <div class="approach-item">
+            <p class="number">03</p>
+            <h4>Código legible.</h4>
+            <p>Escribo código que otros desarrolladores puedan entender y mantener fácilmente.</p>
+          </div>
+          <div class="approach-item">
+            <p class="number">04</p>
+            <h4>Aprendizaje continuo.</h4>
+            <p>Exploro nuevas tecnologías y las aplico en proyectos reales de forma práctica.</p>
+          </div>
+          <div class="approach-item">
+            <p class="number">05</p>
+            <h4>Integración completa.</h4>
+            <p>Trabajo desde el backend hasta el frontend, con despliegue incluido.</p>
+          </div>
+          <div class="approach-item">
+            <p class="number">06</p>
+            <h4>Colaboración activa.</h4>
+            <p>Comunico avances con claridad y trabajo bien en equipo con Git y metodologías ágiles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section container fade-in">
+      <div class="section-header-row">
+        <p class="section-label">Stack</p>
+        <a href="work.html" class="view-all-link">
+          Ver proyectos
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="tech-row">
+        <span class="tech-item">WordPress</span>
+        <span class="tech-item">React</span>
+        <span class="tech-item">.NET</span>
+        <span class="tech-item">Docker</span>
+        <span class="tech-item">LearnDash</span>
+        <span class="tech-item">GitHub</span>
+        <span class="tech-item">Python</span>
+        <span class="tech-item">JavaScript</span>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section container fade-in">
+      <div class="two-col">
+        <p class="section-label">Contacto</p>
+        <div class="contact-card">
+          <div class="contact-card-header">
+            <img src="assets/profile.png" alt="" class="contact-avatar" width="36" height="36">
+            <span>David Villar</span>
+          </div>
+          <div class="contact-message">
+            ¡Hola! ¿En qué puedo ayudarte? Estoy disponible para proyectos freelance,
+            colaboraciones open source o simplemente para charlar sobre tecnología.
+          </div>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener" class="contact-btn">
+              LinkedIn
+              <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">
+              GitHub
+            </a>
+            <a href="https://www.instagram.com/david_villarm" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">
+              Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 David Villar. Paraguay.</p>
+      <div class="footer-links">
+        <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="about.html">Sobre mí</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
