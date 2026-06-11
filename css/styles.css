@@ -853,32 +853,47 @@ h2 {
 
 .approach-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px 40px;
+}
+
+@media (max-width: 1024px) {
+  .approach-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
   .approach-grid {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
 }
 
-.approach-item .number {
+.approach-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 12px;
+  align-items: start;
+}
+
+.approach-num {
   font-size: 0.8125rem;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  line-height: 1.55;
+  padding-top: 1px;
 }
 
-.approach-item h4 {
+.approach-text {
   font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
 }
 
-.approach-item p {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+.approach-text strong {
+  font-weight: 600;
+  color: var(--text);
 }
 
 /* ---- Tech Stack Logos ---- */
