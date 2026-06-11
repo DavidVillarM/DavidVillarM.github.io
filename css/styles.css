@@ -3,7 +3,8 @@
    Inspired by gabrielvaldivia.com
    ============================================ */
 
-:root {
+:root,
+[data-theme="dark"] {
   --bg: #000000;
   --bg-elevated: #141414;
   --bg-card: #1a1a1a;
@@ -13,6 +14,11 @@
   --text-muted: #555555;
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.15);
+  --header-bg: rgba(0, 0, 0, 0.6);
+  --device-bezel: #2a2a2a;
+  --device-phone: #1c1c1e;
+  --code-bg: #0d1117;
+  --skill-icon-filter: brightness(0) invert(1);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -22,6 +28,33 @@
   --section-gap: 120px;
   --header-height: 72px;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-elevated: #f4f4f5;
+  --bg-card: #ececee;
+  --bg-card-hover: #e2e2e6;
+  --text: #0a0a0a;
+  --text-secondary: #5c5c5c;
+  --text-muted: #8a8a8a;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.14);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --device-bezel: #d4d4d8;
+  --device-phone: #e4e4e7;
+  --code-bg: #1e1e2e;
+  --skill-icon-filter: brightness(0);
+}
+
+[data-theme="light"] .about-lead,
+[data-theme="light"] .about-list-label {
+  color: rgba(0, 0, 0, 0.82);
+}
+
+[data-theme="light"] .contact-btn {
+  background: var(--text);
+  color: var(--bg);
 }
 
 *, *::before, *::after {
@@ -133,7 +166,7 @@ h2 {
   height: var(--header-height);
   display: flex;
   align-items: center;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--header-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
@@ -148,6 +181,42 @@ h2 {
   margin: 0 auto;
   padding: 0 32px;
 }
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-toggle {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.header-toggle:hover {
+  background: var(--bg-elevated);
+}
+
+.header-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
 
 .header-name {
   font-size: 0.9375rem;
@@ -342,32 +411,163 @@ h2 {
   border-color: var(--border-strong);
 }
 
-.project-card-visual--shot {
-  padding: 0;
-  background: #0a0a0a;
-  align-items: stretch;
+/* ---- Device mockups in cards ---- */
+
+.device-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
 }
 
-.project-screenshot {
+.device-stage--combo {
+  padding: 16px 12px 20px;
+}
+
+.device-laptop {
+  width: 72%;
+  max-width: 210px;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.35));
+  transform: perspective(900px) rotateY(-5deg) rotateX(2deg);
+  transition: transform var(--transition);
+}
+
+.device-stage--desktop .device-laptop {
+  width: 80%;
+  max-width: 240px;
+  transform: none;
+}
+
+.project-card-link:hover .device-laptop {
+  transform: perspective(900px) rotateY(-3deg) rotateX(1deg) translateY(-3px);
+}
+
+.device-stage--desktop .project-card-link:hover .device-laptop {
+  transform: translateY(-3px);
+}
+
+.device-laptop-bezel {
+  background: var(--device-bezel);
+  border-radius: 10px 10px 0 0;
+  padding: 7px 7px 0;
+  border: 1px solid var(--border-strong);
+}
+
+.device-laptop-bezel img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  border-radius: 3px 3px 0 0;
+}
+
+.device-laptop-bezel--code {
+  background: var(--device-bezel);
+}
+
+.device-laptop-bezel--code .code-preview {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--code-bg);
+  border-radius: 3px 3px 0 0;
+}
+
+.device-laptop-chin {
+  height: 8px;
+  background: linear-gradient(var(--device-bezel), color-mix(in srgb, var(--device-bezel) 80%, #000));
+  border: 1px solid var(--border-strong);
+  border-top: none;
+}
+
+.device-laptop-base {
+  height: 4px;
+  margin: 0 12%;
+  background: var(--device-bezel);
+  border-radius: 0 0 4px 4px;
+  opacity: 0.8;
+}
+
+.device-phone {
+  position: absolute;
+  right: 6%;
+  bottom: 10%;
+  width: 26%;
+  max-width: 68px;
+  background: var(--device-phone);
+  border-radius: 14px;
+  padding: 4px;
+  border: 2px solid color-mix(in srgb, var(--device-phone) 60%, var(--text));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  transform: perspective(900px) rotateY(8deg);
+  z-index: 2;
+  transition: transform var(--transition);
+}
+
+.project-card-link:hover .device-phone {
+  transform: perspective(900px) rotateY(6deg) translateY(-4px);
+}
+
+.device-phone--solo {
+  position: relative;
+  right: auto;
+  bottom: auto;
+  width: 34%;
+  max-width: 90px;
+  transform: none;
+}
+
+.device-phone-notch {
+  width: 28%;
+  height: 3px;
+  background: color-mix(in srgb, var(--text) 20%, transparent);
+  border-radius: 2px;
+  margin: 4px auto 3px;
+}
+
+.device-phone-screen {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 9 / 19;
+}
+
+.device-phone-screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
 }
 
-.project-card-link:hover .project-screenshot {
-  transform: scale(1.04);
+.device-phone-screen--code {
+  background: #000;
 }
 
-.project-card-visual--mobile {
-  background: #111111;
+.phone-code-content {
+  padding: 10px 6px;
+  font-size: 6px;
+  font-family: monospace;
+  text-align: center;
+  color: #fff;
+  line-height: 1.6;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.project-card-visual--mobile .project-screenshot {
-  object-fit: contain;
-  object-position: center top;
-  padding: 16px 24px 0;
+.about-english-note {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  max-width: 36rem;
+  padding-left: 14px;
+  border-left: 2px solid var(--border-strong);
 }
 
 .project-card-info h3 {
@@ -646,7 +846,7 @@ h2 {
 }
 
 .skill-item img.skill-icon-light {
-  filter: brightness(0) invert(1);
+  filter: var(--skill-icon-filter);
 }
 
 /* ---- Approach Grid ---- */
@@ -904,6 +1104,10 @@ h2 {
   display: inline;
   font-size: 1rem;
   color: var(--text-secondary);
+  margin-left: 8px;
+}
+
+.indexed-content h3 + p {
   margin-left: 8px;
 }
 

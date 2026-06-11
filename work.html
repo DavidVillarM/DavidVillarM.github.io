@@ -3,31 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Proyectos de David Villar — Desarrollador de software.">
+  <meta name="description" content="Proyectos de David Villar.">
   <title>Proyectos — David Villar</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "dark";
+      var l = localStorage.getItem("lang") || "es";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.setAttribute("data-lang", l);
+      document.documentElement.lang = l;
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>DV</text></svg>">
 </head>
-<body>
+<body data-meta-title="meta.work.title" data-meta-desc="meta.work.description">
 
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="header-name">David Villar</a>
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-      </button>
+      <div class="header-controls">
+        <button type="button" class="header-toggle" id="lang-toggle" aria-label="Cambiar idioma">EN</button>
+        <button type="button" class="header-toggle" id="theme-toggle" aria-label="Modo claro">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Abrir menú" data-i18n-aria="nav.open">
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <nav class="nav-overlay" aria-hidden="true">
-    <button class="nav-close" aria-label="Cerrar menú">&times;</button>
+    <button class="nav-close" aria-label="Cerrar menú" data-i18n-aria="nav.close">&times;</button>
     <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="work.html" class="active">Proyectos</a>
-      <a href="about.html">Sobre mí</a>
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="work.html" class="active" data-i18n="nav.work">Proyectos</a>
+      <a href="about.html" data-i18n="nav.about">Sobre mí</a>
     </div>
     <div class="nav-social">
       <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
@@ -37,300 +53,23 @@
   </nav>
 
   <main class="container" style="padding-top: calc(var(--header-height) + 80px); padding-bottom: 80px;">
-
-    <h1 class="page-title fade-in">Proyectos</h1>
-
-    <div class="work-grid fade-in">
-
-      <article class="project-card">
-        <a href="https://newton.com.py" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot">
-            <img src="assets/projects/newton-desktop.png" alt="Newton — desktop" class="project-screenshot" loading="lazy" width="1280" height="800">
-          </div>
-          <div class="project-card-info">
-            <h3>Newton</h3>
-            <p>Diseño y desarrollo web — vista desktop</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://newton.com.py" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot project-card-visual--mobile">
-            <img src="assets/projects/newton-mobile.png" alt="Newton — móvil" class="project-screenshot" loading="lazy" width="390" height="844">
-          </div>
-          <div class="project-card-info">
-            <h3>Newton</h3>
-            <p>Diseño y desarrollo web — vista móvil</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://tucursillo.com" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot">
-            <img src="assets/projects/tucursillo-desktop.png" alt="Tucursillo — desktop" class="project-screenshot" loading="lazy" width="1280" height="800">
-          </div>
-          <div class="project-card-info">
-            <h3>Tucursillo</h3>
-            <p>Plataforma de cursos online — vista desktop</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://tucursillo.com" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot project-card-visual--mobile">
-            <img src="assets/projects/tucursillo-mobile.png" alt="Tucursillo — móvil" class="project-screenshot" loading="lazy" width="390" height="844">
-          </div>
-          <div class="project-card-info">
-            <h3>Tucursillo</h3>
-            <p>Plataforma de cursos online — vista móvil</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://arquimedis.com.py" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot">
-            <img src="assets/projects/arquimedis-desktop.png" alt="Arquimedis" class="project-screenshot" loading="lazy" width="1280" height="800">
-          </div>
-          <div class="project-card-info">
-            <h3>Arquimedis</h3>
-            <p>Estudios preuniversitarios — diseño y desarrollo web</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://asocoralsanjavier.org.py" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot">
-            <img src="assets/projects/coral-desktop.png" alt="Coral San Javier" class="project-screenshot" loading="lazy" width="1280" height="800">
-          </div>
-          <div class="project-card-info">
-            <h3>Coral San Javier</h3>
-            <p>Sitio institucional para la asociación coral de Encarnación</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://openmarket-fiuni.vercel.app/" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual project-card-visual--shot">
-            <img src="assets/projects/openmarket-desktop.png" alt="OpenMarket" class="project-screenshot" loading="lazy" width="1280" height="800">
-          </div>
-          <div class="project-card-info">
-            <h3>OpenMarket</h3>
-            <p>Marketplace full stack — colaborador en backend y frontend</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/Automatizador-de-Cuestionarios-para-LearnDash-LMS" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-blue"></div>
-            <div class="mockup mockup-laptop">
-              <div class="mockup-laptop-screen">
-                <div class="code-preview">
-                  <span class="cm">// LearnDash Quiz Bot</span><br>
-                  <span class="kw">function</span> <span class="fn">autoQuiz</span>($course) {<br>
-                  &nbsp;&nbsp;<span class="fn">generateQuestions</span>($course);<br>
-                  &nbsp;&nbsp;<span class="fn">assignToStudents</span>();<br>
-                  }
-                </div>
-              </div>
-              <div class="mockup-laptop-base"></div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Automatizador de Cuestionarios</h3>
-            <p>Plugin para automatizar cuestionarios en LearnDash LMS</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/Registro-de-Estrellas" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-purple"></div>
-            <div class="mockup-glow mockup-glow-blue"></div>
-            <div class="mockup mockup-laptop">
-              <div class="mockup-laptop-screen">
-                <div class="code-preview">
-                  <span class="cm">// API .NET + React</span><br>
-                  <span class="kw">public class</span> <span class="fn">Estrella</span> {<br>
-                  &nbsp;&nbsp;<span class="kw">public string</span> Nombre { <span class="kw">get</span>; }<br>
-                  &nbsp;&nbsp;<span class="kw">public int</span> Puntos { <span class="kw">get</span>; }<br>
-                  }
-                </div>
-              </div>
-              <div class="mockup-laptop-base"></div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Registro de Estrellas</h3>
-            <p>Sistema de registro NW con API .NET, React, WordPress y Docker</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/newton-opm" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-green"></div>
-            <div class="mockup mockup-laptop">
-              <div class="mockup-laptop-screen">
-                <div class="code-preview">
-                  <span class="cm">&lt;!-- WordPress Plugin --&gt;</span><br>
-                  <span class="kw">&lt;?php</span><br>
-                  <span class="fn">register_post_type</span>(<span class="str">'conducta'</span>);<br>
-                  <span class="fn">add_action</span>(<span class="str">'init'</span>, ...);<br>
-                  <span class="kw">?&gt;</span>
-                </div>
-              </div>
-              <div class="mockup-laptop-base"></div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Newton OPM</h3>
-            <p>Plugin WordPress: conducta, asistencia y exámenes</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/tucursillo-academic-system" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-orange"></div>
-            <div class="mockup mockup-laptop">
-              <div class="mockup-laptop-screen">
-                <div class="code-preview">
-                  <span class="cm">// LearnDash Automation</span><br>
-                  <span class="kw">function</span> <span class="fn">syncCourses</span>() {<br>
-                  &nbsp;&nbsp;<span class="kw">return</span> <span class="fn">fetch</span>(<span class="str">'/api/...'</span>);<br>
-                  }
-                </div>
-              </div>
-              <div class="mockup-laptop-base"></div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Tucursillo Academic</h3>
-            <p>Automatización académica para LearnDash</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/tuc-redeem-codes" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-purple"></div>
-            <div class="mockup mockup-laptop">
-              <div class="mockup-laptop-screen">
-                <div class="code-preview">
-                  <span class="cm">// Redeem Codes</span><br>
-                  <span class="kw">function</span> <span class="fn">validateCode</span>($code) {<br>
-                  &nbsp;&nbsp;<span class="kw">return</span> <span class="fn">wp_verify</span>($code);<br>
-                  }
-                </div>
-              </div>
-              <div class="mockup-laptop-base"></div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>TUC Redeem Codes</h3>
-            <p>Códigos de canje para LearnDash Groups</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/Juego-de-la-Viborita" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-green"></div>
-            <div class="mockup mockup-phone">
-              <div class="mockup-phone-screen">
-                <div class="code-preview" style="padding:6px;font-size:5px;font-family:monospace;color:#0f0;background:#000;height:100%;">
-                  <span style="color:#0f0;">SNAKE GAME</span><br>
-                  <span style="color:#fff;">########</span><br>
-                  <span style="color:#fff;">#</span><span style="color:#0f0;">oo</span><span style="color:#fff;">&nbsp;&nbsp;#</span><br>
-                  <span style="color:#fff;">#&nbsp;&nbsp;&nbsp;&nbsp;*#</span><br>
-                  <span style="color:#fff;">########</span><br>
-                  <span style="color:#888;">SCORE: 12</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Juego de la Viborita</h3>
-            <p>Snake clásico en ensamblador (EMU8086)</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/wordlePPY.github.io" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-green"></div>
-            <div class="mockup mockup-phone">
-              <div class="mockup-phone-screen">
-                <div class="code-preview" style="padding:8px;font-size:6px;text-align:center;padding-top:20px;">
-                  <span style="display:inline-block;width:14px;height:14px;background:#538d4e;border-radius:2px;margin:1px;"></span>
-                  <span style="display:inline-block;width:14px;height:14px;background:#b59f3b;border-radius:2px;margin:1px;"></span>
-                  <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span><br>
-                  <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span>
-                  <span style="display:inline-block;width:14px;height:14px;background:#538d4e;border-radius:2px;margin:1px;"></span>
-                  <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Wordle PPY</h3>
-            <p>Clon del juego Wordle en JavaScript puro</p>
-          </div>
-        </a>
-      </article>
-
-      <article class="project-card">
-        <a href="https://github.com/DavidVillarM/calculadoraBasal.github.io" target="_blank" rel="noopener" class="project-card-link">
-          <div class="project-card-visual">
-            <div class="mockup-glow mockup-glow-blue"></div>
-            <div class="mockup mockup-phone">
-              <div class="mockup-phone-screen">
-                <div class="code-preview" style="padding:8px;font-size:6px;text-align:center;padding-top:24px;">
-                  <span style="color:#888;font-size:8px;">Basal</span><br>
-                  <span style="color:#fff;font-size:14px;font-weight:bold;">1,420</span><br>
-                  <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">7</span>
-                  <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">8</span>
-                  <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">9</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card-info">
-            <h3>Calculadora Basal</h3>
-            <p>Calculadora de metabolismo basal en JavaScript</p>
-          </div>
-        </a>
-      </article>
-
-    </div>
-
+    <h1 class="page-title fade-in" data-i18n="page.work">Proyectos</h1>
+    <div id="work-grid" class="work-grid fade-in"></div>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 David Villar. Paraguay.</p>
+      <p data-i18n="footer.rights">© 2026 David Villar. Paraguay.</p>
       <div class="footer-links">
         <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html" data-i18n="page.about">Sobre mí</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

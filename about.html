@@ -3,31 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sobre David Villar — Desarrollador web y de aplicaciones en Paraguay.">
+  <meta name="description" content="Sobre David Villar.">
   <title>Sobre mí — David Villar</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "dark";
+      var l = localStorage.getItem("lang") || "es";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.setAttribute("data-lang", l);
+      document.documentElement.lang = l;
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>DV</text></svg>">
 </head>
-<body>
+<body data-meta-title="meta.about.title" data-meta-desc="meta.about.description">
 
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="header-name">David Villar</a>
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-      </button>
+      <div class="header-controls">
+        <button type="button" class="header-toggle" id="lang-toggle" aria-label="Cambiar idioma">EN</button>
+        <button type="button" class="header-toggle" id="theme-toggle" aria-label="Modo claro">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Abrir menú" data-i18n-aria="nav.open">
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <nav class="nav-overlay" aria-hidden="true">
-    <button class="nav-close" aria-label="Cerrar menú">&times;</button>
+    <button class="nav-close" aria-label="Cerrar menú" data-i18n-aria="nav.close">&times;</button>
     <div class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="work.html">Proyectos</a>
-      <a href="about.html" class="active">Sobre mí</a>
+      <a href="index.html" data-i18n="nav.home">Inicio</a>
+      <a href="work.html" data-i18n="nav.work">Proyectos</a>
+      <a href="about.html" class="active" data-i18n="nav.about">Sobre mí</a>
     </div>
     <div class="nav-social">
       <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
@@ -38,51 +54,36 @@
 
   <main class="container" style="padding-top: calc(var(--header-height) + 80px); padding-bottom: 80px;">
 
-    <h1 class="page-title fade-in">Sobre mí</h1>
+    <h1 class="page-title fade-in" data-i18n="page.about">Sobre mí</h1>
 
     <section class="about-page-section fade-in">
       <div class="two-col">
-        <p class="section-label">Bio</p>
+        <p class="section-label" data-i18n="aboutPage.bio.label">Bio</p>
         <div class="bio-text">
-          <p>
-            Soy David Villar, estudiante de Ingeniería en Informática y Licenciatura en Lengua Inglesa
-            en la Universidad Nacional de Itapúa, Paraguay. Me apasiona construir software con impacto
-            real, especialmente en educación, e-commerce y gestión académica.
-          </p>
-          <p>
-            Trabajo como desarrollador web y de aplicaciones en
-            <a href="https://newton.com.py" target="_blank" rel="noopener">Newton</a>,
-            <a href="https://arquimedis.com.py" target="_blank" rel="noopener">Arquimedis Estudios Preuniversitarios</a> y
-            <a href="https://tucursillo.com" target="_blank" rel="noopener">Tucursillo</a>.
-            También formo parte de Crextar SA como relator y Community Manager en el área de firma digital.
-          </p>
-          <p>
-            Diseñé y desarrollé las páginas web de
-            <a href="https://newton.com.py" target="_blank" rel="noopener">newton.com.py</a>,
-            <a href="https://arquimedis.com.py" target="_blank" rel="noopener">arquimedis.com.py</a> y
-            <a href="https://tucursillo.com" target="_blank" rel="noopener">tucursillo.com</a>.
-            Cuando no estoy programando, contribuyo a proyectos open source y colaboro en equipos de desarrollo.
-          </p>
+          <p data-i18n="aboutPage.bio.p1" data-i18n-html></p>
+          <p data-i18n="aboutPage.bio.p2" data-i18n-html></p>
+          <p data-i18n="aboutPage.bio.p3" data-i18n-html></p>
+          <p class="about-english-note" data-i18n="aboutPage.bio.english"></p>
         </div>
       </div>
     </section>
 
     <section class="about-page-section fade-in">
       <div class="two-col">
-        <p class="section-label">Formación</p>
+        <p class="section-label" data-i18n="aboutPage.edu.label">Formación</p>
         <div class="experience-list">
           <div class="experience-item">
-            <span class="experience-year">Actual</span>
+            <span class="experience-year" data-i18n="aboutPage.current">Actual</span>
             <div class="experience-content">
-              <h4>Ingeniería en Informática</h4>
-              <p>Universidad Nacional de Itapúa — Paraguay</p>
+              <h4 data-i18n="aboutPage.edu.cs">Ingeniería en Informática</h4>
+              <p data-i18n="aboutPage.edu.cs.place"></p>
             </div>
           </div>
           <div class="experience-item">
-            <span class="experience-year">Actual</span>
+            <span class="experience-year" data-i18n="aboutPage.current">Actual</span>
             <div class="experience-content">
-              <h4>Licenciatura en Lengua Inglesa</h4>
-              <p>Universidad Nacional de Itapúa — Paraguay</p>
+              <h4 data-i18n="aboutPage.edu.en">Licenciatura en Lengua Inglesa</h4>
+              <p data-i18n="aboutPage.edu.en.place"></p>
             </div>
           </div>
         </div>
@@ -91,47 +92,34 @@
 
     <section class="about-page-section fade-in">
       <div class="two-col">
-        <p class="section-label">Experiencia</p>
+        <p class="section-label" data-i18n="aboutPage.exp.label">Experiencia</p>
         <div class="experience-list">
           <div class="experience-item">
-            <span class="experience-year">Actual</span>
+            <span class="experience-year" data-i18n="aboutPage.current">Actual</span>
             <div class="experience-content">
-              <h4>Desarrollador web y de aplicaciones</h4>
-              <p>
-                <a href="https://newton.com.py" target="_blank" rel="noopener">Newton</a>,
-                <a href="https://arquimedis.com.py" target="_blank" rel="noopener">Arquimedis</a> y
-                <a href="https://tucursillo.com" target="_blank" rel="noopener">Tucursillo</a>
-                — plugins WordPress, automatización LearnDash y desarrollo de sitios web.
-              </p>
+              <h4 data-i18n="aboutPage.exp.dev.title"></h4>
+              <p data-i18n="aboutPage.exp.dev.text" data-i18n-html></p>
             </div>
           </div>
           <div class="experience-item">
-            <span class="experience-year">Actual</span>
+            <span class="experience-year" data-i18n="aboutPage.current">Actual</span>
             <div class="experience-content">
-              <h4>Relator y Community Manager</h4>
-              <p>Crextar SA — firma digital y servicios de certificación electrónica.</p>
+              <h4 data-i18n="aboutPage.exp.crextar.title"></h4>
+              <p data-i18n="aboutPage.exp.crextar.text"></p>
             </div>
           </div>
           <div class="experience-item">
             <span class="experience-year">2026</span>
             <div class="experience-content">
-              <h4>Colaborador — OpenMarket</h4>
-              <p>
-                Contribuciones en
-                <a href="https://github.com/CrisNAC/BackendMarketplace" target="_blank" rel="noopener">BackendMarketplace</a> y
-                <a href="https://github.com/CrisNAC/FrontendMarketplace" target="_blank" rel="noopener">FrontendMarketplace</a>
-                — marketplace full stack con React y Node.js.
-              </p>
+              <h4 data-i18n="aboutPage.exp.openmarket.title"></h4>
+              <p data-i18n="aboutPage.exp.openmarket.text" data-i18n-html></p>
             </div>
           </div>
           <div class="experience-item">
             <span class="experience-year">2024</span>
             <div class="experience-content">
-              <h4>Sistemas full stack</h4>
-              <p>
-                Registro de Estrellas: API .NET, frontend React, integración WordPress
-                y despliegue con Docker.
-              </p>
+              <h4 data-i18n="aboutPage.exp.fullstack.title"></h4>
+              <p data-i18n="aboutPage.exp.fullstack.text"></p>
             </div>
           </div>
         </div>
@@ -140,54 +128,26 @@
 
     <section class="about-page-section fade-in">
       <div class="two-col">
-        <p class="section-label">Sitios web</p>
+        <p class="section-label" data-i18n="aboutPage.sites.label">Sitios web</p>
         <div class="indexed-list">
-          <div class="indexed-item">
-            <span class="indexed-char">N</span>
-            <div class="indexed-content">
-              <h3><a href="https://newton.com.py" target="_blank" rel="noopener" style="color:inherit;">newton.com.py</a></h3>
-              <p>— Diseño y desarrollo del sitio institucional.</p>
-            </div>
-          </div>
-          <div class="indexed-item">
-            <span class="indexed-char">A</span>
-            <div class="indexed-content">
-              <h3><a href="https://arquimedis.com.py" target="_blank" rel="noopener" style="color:inherit;">arquimedis.com.py</a></h3>
-              <p>— Diseño y desarrollo del sitio de estudios preuniversitarios.</p>
-            </div>
-          </div>
-          <div class="indexed-item">
-            <span class="indexed-char">T</span>
-            <div class="indexed-content">
-              <h3><a href="https://tucursillo.com" target="_blank" rel="noopener" style="color:inherit;">tucursillo.com</a></h3>
-              <p>— Diseño y desarrollo de la plataforma de cursos online.</p>
-            </div>
-          </div>
-          <div class="indexed-item">
-            <span class="indexed-char">C</span>
-            <div class="indexed-content">
-              <h3><a href="https://asocoralsanjavier.org.py" target="_blank" rel="noopener" style="color:inherit;">asocoralsanjavier.org.py</a></h3>
-              <p>— Sitio web para la Asociación Coral San Javier de Apoyo al CORUCI.</p>
-            </div>
-          </div>
+          <div class="indexed-item"><span class="indexed-char">N</span><div class="indexed-content" data-i18n="aboutPage.sites.newton" data-i18n-html></div></div>
+          <div class="indexed-item"><span class="indexed-char">A</span><div class="indexed-content" data-i18n="aboutPage.sites.arquimedis" data-i18n-html></div></div>
+          <div class="indexed-item"><span class="indexed-char">T</span><div class="indexed-content" data-i18n="aboutPage.sites.tucursillo" data-i18n-html></div></div>
+          <div class="indexed-item"><span class="indexed-char">C</span><div class="indexed-content" data-i18n="aboutPage.sites.coral" data-i18n-html></div></div>
         </div>
       </div>
     </section>
 
     <section class="about-page-section fade-in">
       <div class="two-col">
-        <p class="section-label">Tecnologías</p>
+        <p class="section-label" data-i18n="aboutPage.tech.label">Tecnologías</p>
         <div class="skill-grid">
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""><span>Python</span></div>
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""><span>JavaScript</span></div>
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt=""><span>Java</span></div>
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt=""><span>C#</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt=""><span>C / C++</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt=""><span>PHP</span></div>
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt=""><span>React</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=""><span>.NET</span></div>
           <div class="skill-item"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="" class="skill-icon-light"><span>WordPress</span></div>
-          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt=""><span>Docker</span></div>
           <div class="skill-item"><img src="https://cdn.simpleicons.org/gnuassembly/FFFFFF" alt="" class="skill-icon-light"><span>Assembler · EMU8086</span></div>
         </div>
       </div>
@@ -195,29 +155,11 @@
 
     <section class="about-page-section fade-in">
       <div class="two-col">
-        <p class="section-label">Enlaces</p>
+        <p class="section-label" data-i18n="aboutPage.links.label">Enlaces</p>
         <div class="indexed-list">
-          <div class="indexed-item">
-            <span class="indexed-char">G</span>
-            <div class="indexed-content">
-              <h3><a href="https://github.com/DavidVillarM" target="_blank" rel="noopener" style="color:inherit;">GitHub</a></h3>
-              <p>— Proyectos open source y colaboraciones.</p>
-            </div>
-          </div>
-          <div class="indexed-item">
-            <span class="indexed-char">L</span>
-            <div class="indexed-content">
-              <h3><a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener" style="color:inherit;">LinkedIn</a></h3>
-              <p>— Perfil profesional y red de contactos.</p>
-            </div>
-          </div>
-          <div class="indexed-item">
-            <span class="indexed-char">I</span>
-            <div class="indexed-content">
-              <h3><a href="https://www.instagram.com/david_villarm" target="_blank" rel="noopener" style="color:inherit;">Instagram</a></h3>
-              <p>— Vida personal y proyectos.</p>
-            </div>
-          </div>
+          <div class="indexed-item"><span class="indexed-char">G</span><div class="indexed-content" data-i18n="aboutPage.links.github" data-i18n-html></div></div>
+          <div class="indexed-item"><span class="indexed-char">L</span><div class="indexed-content" data-i18n="aboutPage.links.linkedin" data-i18n-html></div></div>
+          <div class="indexed-item"><span class="indexed-char">I</span><div class="indexed-content" data-i18n="aboutPage.links.instagram" data-i18n-html></div></div>
         </div>
       </div>
     </section>
@@ -226,15 +168,17 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 David Villar. Paraguay.</p>
+      <p data-i18n="footer.rights">© 2026 David Villar. Paraguay.</p>
       <div class="footer-links">
         <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="index.html">Inicio</a>
+        <a href="index.html" data-i18n="nav.home">Inicio</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -3,33 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="David Villar — Desarrollador web y de aplicaciones. Estudiante en la Universidad Nacional de Itapúa, Paraguay.">
+  <meta name="description" content="David Villar — Desarrollador web y de aplicaciones.">
   <title>David Villar — Desarrollador de Software</title>
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme") || "dark";
+      var l = localStorage.getItem("lang") || "es";
+      document.documentElement.setAttribute("data-theme", t);
+      document.documentElement.setAttribute("data-lang", l);
+      document.documentElement.lang = l;
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>DV</text></svg>">
 </head>
-<body>
+<body data-meta-title="meta.title" data-meta-desc="meta.description">
 
-  <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <a href="index.html" class="header-name">David Villar</a>
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <span></span>
-      </button>
+      <div class="header-controls">
+        <button type="button" class="header-toggle" id="lang-toggle" aria-label="Cambiar idioma">EN</button>
+        <button type="button" class="header-toggle" id="theme-toggle" aria-label="Modo claro">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="menu-toggle" aria-label="Abrir menú" data-i18n-aria="nav.open">
+          <span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- Navigation Overlay -->
   <nav class="nav-overlay" aria-hidden="true">
-    <button class="nav-close" aria-label="Cerrar menú">&times;</button>
+    <button class="nav-close" aria-label="Cerrar menú" data-i18n-aria="nav.close">&times;</button>
     <div class="nav-links">
-      <a href="index.html" class="active">Inicio</a>
-      <a href="work.html">Proyectos</a>
-      <a href="about.html">Sobre mí</a>
+      <a href="index.html" class="active" data-i18n="nav.home">Inicio</a>
+      <a href="work.html" data-i18n="nav.work">Proyectos</a>
+      <a href="about.html" data-i18n="nav.about">Sobre mí</a>
     </div>
     <div class="nav-social">
       <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
@@ -40,141 +54,46 @@
 
   <main>
 
-    <!-- Hero -->
     <section class="hero container">
-      <h1 class="hero-headline fade-in">
+      <h1 class="hero-headline fade-in" data-i18n="hero.title" data-i18n-html>
         Desarrollador de software<br>orientado a productos reales.
       </h1>
 
-      <div class="project-carousel fade-in">
-
-        <article class="project-card">
-          <a href="https://newton.com.py" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot">
-              <img src="assets/projects/newton-desktop.png" alt="Newton Centro de Estudios — desktop" class="project-screenshot" loading="lazy" width="1280" height="800">
-            </div>
-            <div class="project-card-info">
-              <h3>Newton</h3>
-              <p>Diseño y desarrollo web — vista desktop</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://newton.com.py" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot project-card-visual--mobile">
-              <img src="assets/projects/newton-mobile.png" alt="Newton Centro de Estudios — móvil" class="project-screenshot" loading="lazy" width="390" height="844">
-            </div>
-            <div class="project-card-info">
-              <h3>Newton</h3>
-              <p>Diseño y desarrollo web — vista móvil</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://tucursillo.com" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot">
-              <img src="assets/projects/tucursillo-desktop.png" alt="Tucursillo — desktop" class="project-screenshot" loading="lazy" width="1280" height="800">
-            </div>
-            <div class="project-card-info">
-              <h3>Tucursillo</h3>
-              <p>Plataforma de cursos online — vista desktop</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://tucursillo.com" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot project-card-visual--mobile">
-              <img src="assets/projects/tucursillo-mobile.png" alt="Tucursillo — móvil" class="project-screenshot" loading="lazy" width="390" height="844">
-            </div>
-            <div class="project-card-info">
-              <h3>Tucursillo</h3>
-              <p>Plataforma de cursos online — vista móvil</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://arquimedis.com.py" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot">
-              <img src="assets/projects/arquimedis-desktop.png" alt="Arquimedis Estudios Preuniversitarios" class="project-screenshot" loading="lazy" width="1280" height="800">
-            </div>
-            <div class="project-card-info">
-              <h3>Arquimedis</h3>
-              <p>Estudios preuniversitarios — diseño y desarrollo web</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://asocoralsanjavier.org.py" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot">
-              <img src="assets/projects/coral-desktop.png" alt="Asociación Coral San Javier" class="project-screenshot" loading="lazy" width="1280" height="800">
-            </div>
-            <div class="project-card-info">
-              <h3>Coral San Javier</h3>
-              <p>Sitio institucional para la asociación coral de Encarnación</p>
-            </div>
-          </a>
-        </article>
-
-        <article class="project-card">
-          <a href="https://openmarket-fiuni.vercel.app/" target="_blank" rel="noopener" class="project-card-link">
-            <div class="project-card-visual project-card-visual--shot">
-              <img src="assets/projects/openmarket-desktop.png" alt="OpenMarket" class="project-screenshot" loading="lazy" width="1280" height="800">
-            </div>
-            <div class="project-card-info">
-              <h3>OpenMarket</h3>
-              <p>Marketplace full stack — colaborador en backend y frontend</p>
-            </div>
-          </a>
-        </article>
-
-      </div>
+      <div id="project-carousel" class="project-carousel fade-in"></div>
 
       <a href="work.html" class="view-all-link">
-        Ver todos los proyectos
+        <span data-i18n="projects.viewAll">Ver todos los proyectos</span>
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </section>
 
-    <!-- About -->
     <section class="about-section container fade-in">
       <div class="about-grid">
         <div class="about-photo-wrap">
           <img src="assets/profile.png" alt="David Villar" class="about-photo" width="300" height="375">
         </div>
         <div class="about-content">
-          <h2>Construyo soluciones digitales que resuelven problemas reales.</h2>
-          <p class="about-lead">
-            Estudiante de Ingeniería en Informática y Licenciatura en Lengua Inglesa en la
-            Universidad Nacional de Itapúa. Desarrollador web y de aplicaciones en
-            <a href="https://newton.com.py" target="_blank" rel="noopener">Newton</a>,
-            <a href="https://arquimedis.com.py" target="_blank" rel="noopener">Arquimedis</a> y
-            <a href="https://tucursillo.com" target="_blank" rel="noopener">Tucursillo</a>.
-            También trabajo en Crextar SA como relator y Community Manager.
-          </p>
-          <p class="about-list-label">Como desarrollador, me especializo en:</p>
+          <h2 data-i18n="about.title">Construyo soluciones digitales que resuelven problemas reales.</h2>
+          <p class="about-lead" data-i18n="about.lead" data-i18n-html></p>
+          <p class="about-english-note" data-i18n="about.english"></p>
+          <p class="about-list-label" data-i18n="about.listLabel">Como desarrollador, me especializo en:</p>
           <ul class="about-list">
-            <li>Diseñar y desarrollar sitios web como newton.com.py, arquimedis.com.py, tucursillo.com y asocoralsanjavier.org.py.</li>
-            <li>Plugins WordPress para gestión académica, e-learning y automatización LearnDash.</li>
-            <li>Sistemas full stack con .NET, React, Docker y APIs escalables.</li>
-            <li>Colaborar en equipos de producto con iteración rápida y código mantenible.</li>
+            <li data-i18n="about.li1"></li>
+            <li data-i18n="about.li2"></li>
+            <li data-i18n="about.li3"></li>
+            <li data-i18n="about.li4"></li>
           </ul>
           <a href="about.html" class="learn-more">
-            Conocer más
+            <span data-i18n="about.more">Conocer más</span>
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Capabilities -->
     <section class="section container fade-in">
       <div class="two-col">
-        <p class="section-label">Habilidades</p>
+        <p class="section-label" data-i18n="skills.label">Habilidades</p>
         <div class="skill-grid">
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""><span>Python</span></div>
           <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""><span>JavaScript</span></div>
@@ -194,51 +113,49 @@
       </div>
     </section>
 
-    <!-- Approach -->
     <section class="section container fade-in">
       <div class="two-col">
-        <p class="section-label">Enfoque</p>
+        <p class="section-label" data-i18n="approach.label">Enfoque</p>
         <div class="approach-grid">
           <div class="approach-item">
             <p class="number">01</p>
-            <h4>Producto primero.</h4>
-            <p>Cada línea de código debe resolver un problema concreto del usuario final.</p>
+            <h4 data-i18n="approach.01.title">Producto primero.</h4>
+            <p data-i18n="approach.01.text"></p>
           </div>
           <div class="approach-item">
             <p class="number">02</p>
-            <h4>Iteración rápida.</h4>
-            <p>Prefiero entregar versiones funcionales temprano y mejorar con feedback real.</p>
+            <h4 data-i18n="approach.02.title">Iteración rápida.</h4>
+            <p data-i18n="approach.02.text"></p>
           </div>
           <div class="approach-item">
             <p class="number">03</p>
-            <h4>Código legible.</h4>
-            <p>Escribo código que otros desarrolladores puedan entender y mantener fácilmente.</p>
+            <h4 data-i18n="approach.03.title">Código legible.</h4>
+            <p data-i18n="approach.03.text"></p>
           </div>
           <div class="approach-item">
             <p class="number">04</p>
-            <h4>Aprendizaje continuo.</h4>
-            <p>Exploro nuevas tecnologías y las aplico en proyectos reales de forma práctica.</p>
+            <h4 data-i18n="approach.04.title">Aprendizaje continuo.</h4>
+            <p data-i18n="approach.04.text"></p>
           </div>
           <div class="approach-item">
             <p class="number">05</p>
-            <h4>Integración completa.</h4>
-            <p>Trabajo desde el backend hasta el frontend, con despliegue incluido.</p>
+            <h4 data-i18n="approach.05.title">Integración completa.</h4>
+            <p data-i18n="approach.05.text"></p>
           </div>
           <div class="approach-item">
             <p class="number">06</p>
-            <h4>Colaboración activa.</h4>
-            <p>Comunico avances con claridad y trabajo bien en equipo con Git y metodologías ágiles.</p>
+            <h4 data-i18n="approach.06.title">Colaboración activa.</h4>
+            <p data-i18n="approach.06.text"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tech Stack -->
     <section class="section container fade-in">
       <div class="section-header-row">
-        <p class="section-label">Stack</p>
+        <p class="section-label" data-i18n="stack.label">Stack</p>
         <a href="work.html" class="view-all-link">
-          Ver proyectos
+          <span data-i18n="stack.viewProjects">Ver proyectos</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
@@ -254,30 +171,22 @@
       </div>
     </section>
 
-    <!-- Contact -->
     <section class="section container fade-in">
       <div class="two-col">
-        <p class="section-label">Contacto</p>
+        <p class="section-label" data-i18n="contact.label">Contacto</p>
         <div class="contact-card">
           <div class="contact-card-header">
             <img src="assets/profile.png" alt="" class="contact-avatar" width="36" height="36">
             <span>David Villar</span>
           </div>
-          <div class="contact-message">
-            ¡Hola! ¿En qué puedo ayudarte? Estoy disponible para proyectos freelance,
-            colaboraciones open source o simplemente para charlar sobre tecnología.
-          </div>
+          <div class="contact-message" data-i18n="contact.message"></div>
           <div class="contact-links">
             <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener" class="contact-btn">
               LinkedIn
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">
-              GitHub
-            </a>
-            <a href="https://www.instagram.com/david_villarm" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">
-              Instagram
-            </a>
+            <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">GitHub</a>
+            <a href="https://www.instagram.com/david_villarm" target="_blank" rel="noopener" class="contact-btn contact-btn-secondary">Instagram</a>
           </div>
         </div>
       </div>
@@ -287,15 +196,17 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>&copy; 2026 David Villar. Paraguay.</p>
+      <p data-i18n="footer.rights">© 2026 David Villar. Paraguay.</p>
       <div class="footer-links">
         <a href="https://github.com/DavidVillarM" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/davidvillarm" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="about.html">Sobre mí</a>
+        <a href="about.html" data-i18n="page.about">Sobre mí</a>
       </div>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
+  <script src="js/projects.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
