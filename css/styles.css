@@ -463,26 +463,29 @@ h2 {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 64px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  justify-items: center;
 }
 
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+.about-photo-wrap {
+  width: 280px;
+  max-width: 100%;
 }
 
 .about-photo {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   border-radius: var(--radius-lg);
   filter: grayscale(100%) contrast(1.1);
   transition: filter 0.5s ease;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 640px;
 }
 
 .about-photo:hover {
@@ -533,27 +536,41 @@ h2 {
   gap: 10px;
 }
 
-/* ---- Tags / Capabilities ---- */
+/* ---- Skills / Capabilities ---- */
 
-.tags {
+.skill-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
-.tag {
+.skill-item {
   display: inline-flex;
-  padding: 8px 18px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px 10px 14px;
   border: 1px solid var(--border-strong);
   border-radius: 100px;
   font-size: 0.875rem;
   color: var(--text);
-  transition: background var(--transition), border-color var(--transition);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
 
-.tag:hover {
+.skill-item:hover {
   background: var(--bg-elevated);
   border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.skill-item img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.skill-item img.skill-icon-light {
+  filter: brightness(0) invert(1);
 }
 
 /* ---- Approach Grid ---- */

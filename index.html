@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="David Villar — Desarrollador de software. Estudiante de Ingeniería en Informática en Paraguay.">
+  <meta name="description" content="David Villar — Desarrollador web y de aplicaciones. Estudiante en la Universidad Nacional de Itapúa, Paraguay.">
   <title>David Villar — Desarrollador de Software</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +47,57 @@
       </h1>
 
       <div class="project-carousel fade-in">
+        <!-- OpenMarket -->
+        <article class="project-card">
+          <a href="https://openmarket-fiuni.vercel.app/" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-orange"></div>
+              <div class="mockup-glow mockup-glow-purple"></div>
+              <div class="mockup mockup-laptop">
+                <div class="mockup-laptop-screen">
+                  <div class="code-preview">
+                    <span class="cm">// OpenMarket</span><br>
+                    <span class="kw">const</span> <span class="fn">marketplace</span> = {<br>
+                    &nbsp;&nbsp;products: <span class="fn">fetchProducts</span>(),<br>
+                    &nbsp;&nbsp;cart: <span class="kw">new</span> <span class="fn">Cart</span>()<br>
+                    };
+                  </div>
+                </div>
+                <div class="mockup-laptop-base"></div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>OpenMarket</h3>
+              <p>Marketplace full stack — colaborador en backend y frontend</p>
+            </div>
+          </a>
+        </article>
+
+        <!-- Automatizador de Cuestionarios -->
+        <article class="project-card">
+          <a href="https://github.com/DavidVillarM/Automatizador-de-Cuestionarios-para-LearnDash-LMS" target="_blank" rel="noopener" class="project-card-link">
+            <div class="project-card-visual">
+              <div class="mockup-glow mockup-glow-blue"></div>
+              <div class="mockup mockup-laptop">
+                <div class="mockup-laptop-screen">
+                  <div class="code-preview">
+                    <span class="cm">// LearnDash Quiz Bot</span><br>
+                    <span class="kw">function</span> <span class="fn">autoQuiz</span>($course) {<br>
+                    &nbsp;&nbsp;<span class="fn">generateQuestions</span>($course);<br>
+                    &nbsp;&nbsp;<span class="fn">assignToStudents</span>();<br>
+                    }
+                  </div>
+                </div>
+                <div class="mockup-laptop-base"></div>
+              </div>
+            </div>
+            <div class="project-card-info">
+              <h3>Automatizador de Cuestionarios</h3>
+              <p>Plugin para automatizar cuestionarios en LearnDash LMS</p>
+            </div>
+          </a>
+        </article>
+
         <!-- Registro de Estrellas -->
         <article class="project-card">
           <a href="https://github.com/DavidVillarM/Registro-de-Estrellas" target="_blank" rel="noopener" class="project-card-link">
@@ -147,26 +198,27 @@
           </a>
         </article>
 
-        <!-- Calculadora Basal -->
+        <!-- Juego de la Viborita -->
         <article class="project-card">
-          <a href="https://github.com/DavidVillarM/calculadoraBasal.github.io" target="_blank" rel="noopener" class="project-card-link">
+          <a href="https://github.com/DavidVillarM/Juego-de-la-Viborita" target="_blank" rel="noopener" class="project-card-link">
             <div class="project-card-visual">
-              <div class="mockup-glow mockup-glow-blue"></div>
+              <div class="mockup-glow mockup-glow-green"></div>
               <div class="mockup mockup-phone">
                 <div class="mockup-phone-screen">
-                  <div class="code-preview" style="padding:8px;font-size:6px;text-align:center;padding-top:24px;">
-                    <span style="color:#888;font-size:8px;">Basal</span><br>
-                    <span style="color:#fff;font-size:14px;font-weight:bold;">1,420</span><br>
-                    <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">7</span>
-                    <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">8</span>
-                    <span style="display:inline-block;width:28px;height:20px;background:#333;border-radius:4px;margin:2px;font-size:5px;line-height:20px;">9</span>
+                  <div class="code-preview" style="padding:6px;font-size:5px;font-family:monospace;color:#0f0;background:#000;height:100%;">
+                    <span style="color:#0f0;">SNAKE GAME</span><br>
+                    <span style="color:#fff;">########</span><br>
+                    <span style="color:#fff;">#</span><span style="color:#0f0;">oo</span><span style="color:#fff;">&nbsp;&nbsp;#</span><br>
+                    <span style="color:#fff;">#&nbsp;&nbsp;&nbsp;&nbsp;*#</span><br>
+                    <span style="color:#fff;">########</span><br>
+                    <span style="color:#888;">SCORE: 12</span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="project-card-info">
-              <h3>Calculadora Basal</h3>
-              <p>Calculadora metabólica en JavaScript</p>
+              <h3>Juego de la Viborita</h3>
+              <p>Snake clásico en ensamblador (EMU8086)</p>
             </div>
           </a>
         </article>
@@ -181,19 +233,23 @@
     <!-- About -->
     <section class="section container fade-in">
       <div class="about-grid">
-        <img src="assets/profile.png" alt="David Villar" class="about-photo" width="280" height="280">
+        <div class="about-photo-wrap">
+          <img src="assets/profile.png" alt="David Villar" class="about-photo" width="280" height="280">
+        </div>
         <div class="about-content">
           <h2>Construyo soluciones digitales que resuelven problemas reales.</h2>
           <p>
-            Soy estudiante de Ingeniería en Informática en Newton Centro de Estudios, Paraguay.
-            Me especializo en desarrollo web, plugins WordPress y sistemas full stack con tecnologías
-            modernas como .NET, React y Docker.
+            Estudiante de Ingeniería en Informática y Licenciatura en Lengua Inglesa en la
+            Universidad Nacional de Itapúa. Desarrollador web y de aplicaciones en
+            <a href="https://newton.com.py" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;">Newton</a>,
+            <a href="https://arquimedis.com.py" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;">Arquimedis</a> y
+            <a href="https://tucursillo.com" target="_blank" rel="noopener" style="color:var(--text);text-decoration:underline;text-underline-offset:3px;">Tucursillo</a>.
           </p>
           <ul class="about-list">
-            <li>Desarrollo plugins WordPress para gestión académica y e-learning.</li>
-            <li>Construyo APIs y frontends con arquitecturas escalables.</li>
-            <li>Automatizo procesos educativos con integraciones LearnDash.</li>
-            <li>Entrego código limpio, documentado y listo para producción.</li>
+            <li>Diseñé y desarrollé newton.com.py, arquimedis.com.py y tucursillo.com.</li>
+            <li>Plugins WordPress para gestión académica, e-learning y automatización LearnDash.</li>
+            <li>Sistemas full stack con .NET, React, Docker y APIs escalables.</li>
+            <li>Relator y Community Manager en Crextar SA — firma digital.</li>
           </ul>
           <a href="about.html" class="learn-more">
             Conocer más
@@ -207,19 +263,21 @@
     <section class="section container fade-in">
       <div class="two-col">
         <p class="section-label">Habilidades</p>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Java</span>
-          <span class="tag">C#</span>
-          <span class="tag">C / C++</span>
-          <span class="tag">PHP</span>
-          <span class="tag">React</span>
-          <span class="tag">.NET</span>
-          <span class="tag">WordPress</span>
-          <span class="tag">Docker</span>
-          <span class="tag">HTML & CSS</span>
-          <span class="tag">Git</span>
+        <div class="skill-grid">
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""><span>Python</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt=""><span>JavaScript</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt=""><span>Java</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt=""><span>C#</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt=""><span>C / C++</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt=""><span>PHP</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt=""><span>React</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=""><span>.NET</span></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/wordpress/21759B" alt="" class="skill-icon-light"><span>WordPress</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt=""><span>Docker</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt=""><span>HTML</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt=""><span>CSS</span></div>
+          <div class="skill-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt=""><span>Git</span></div>
+          <div class="skill-item"><img src="https://cdn.simpleicons.org/gnuassembly/FFFFFF" alt="" class="skill-icon-light"><span>Assembler</span></div>
         </div>
       </div>
     </section>
