@@ -463,9 +463,20 @@ h2 {
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  justify-items: center;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-photo-wrap {
+    margin: 0 auto;
+  }
 }
 
 .about-photo-wrap {
@@ -477,15 +488,10 @@ h2 {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center center;
+  object-position: 30% 35%;
   border-radius: var(--radius-lg);
   filter: grayscale(100%) contrast(1.1);
   transition: filter 0.5s ease;
-}
-
-.about-content {
-  width: 100%;
-  max-width: 640px;
 }
 
 .about-photo:hover {
