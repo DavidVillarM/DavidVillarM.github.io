@@ -57,47 +57,9 @@
     fadeElements.forEach((el) => observer.observe(el));
   }
 
-  window.initCarousel = function initCarousel(carousel) {
-    if (!carousel || carousel.dataset.carouselInit) return;
-    carousel.dataset.carouselInit = "true";
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    carousel.addEventListener("mousedown", (e) => {
-      isDown = true;
-      startX = e.pageX - carousel.offsetLeft;
-      scrollLeft = carousel.scrollLeft;
-      carousel.style.cursor = "grabbing";
-    });
-
-    carousel.addEventListener("mouseleave", () => {
-      isDown = false;
-      carousel.style.cursor = "grab";
-    });
-
-    carousel.addEventListener("mouseup", () => {
-      isDown = false;
-      carousel.style.cursor = "grab";
-    });
-
-    carousel.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - carousel.offsetLeft;
-      carousel.scrollLeft = scrollLeft - (x - startX) * 1.5;
-    });
-
-    carousel.style.cursor = "grab";
-  };
-
   initTheme();
   initNav();
   initFadeIn();
   window.I18n?.init();
   window.Projects?.renderAll();
-
-  const carousel = document.getElementById("project-carousel");
-  if (carousel) window.initCarousel(carousel);
 })();

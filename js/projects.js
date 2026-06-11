@@ -270,8 +270,9 @@ window.Projects = {
 
     if (carousel) {
       const featured = window.PROJECTS.filter((p) => p.featured);
-      carousel.innerHTML = featured.map((p) => this.renderCard(p)).join("");
-      carousel.classList.add("fade-in");
+      const cards = featured.map((p) => this.renderCard(p)).join("");
+      carousel.innerHTML = cards + cards;
+      if (carousel._carouselCleanup) carousel._carouselCleanup();
       if (window.initCarousel) window.initCarousel(carousel);
     }
 

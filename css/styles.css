@@ -360,17 +360,56 @@ h2 {
 
 /* ---- Project Carousel ---- */
 
+.carousel-wrap {
+  position: relative;
+  margin: 0 -32px;
+}
+
+.carousel-wrap::before,
+.carousel-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 8px;
+  width: 56px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 15%, transparent);
+}
+
+.carousel-wrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 15%, transparent);
+}
+
 .project-carousel {
   display: flex;
   gap: 24px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding-bottom: 8px;
-  margin: 0 -32px;
   padding-left: 32px;
   padding-right: 32px;
+  cursor: grab;
+  user-select: none;
+}
+
+.project-carousel.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+
+.project-carousel.is-dragging .project-card-link {
+  pointer-events: none;
 }
 
 .project-carousel::-webkit-scrollbar {
@@ -380,7 +419,6 @@ h2 {
 .project-card {
   flex: 0 0 min(340px, 80vw);
   scroll-snap-align: start;
-  group: project;
 }
 
 .project-card-link {
