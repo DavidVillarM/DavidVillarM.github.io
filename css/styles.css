@@ -1021,6 +1021,21 @@ h2 {
   transform: translateY(-1px);
 }
 
+.contact-btn-whatsapp {
+  background: #25d366;
+  color: #000000;
+}
+
+.contact-btn-whatsapp:hover {
+  background: #20bd5a;
+  opacity: 1;
+}
+
+[data-theme="light"] .contact-btn-whatsapp {
+  background: #25d366;
+  color: #000000;
+}
+
 .contact-btn-secondary {
   background: transparent;
   color: var(--text);

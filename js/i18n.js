@@ -40,6 +40,8 @@ window.I18N = {
     "stack.viewProjects": "Ver proyectos",
     "contact.label": "Contacto",
     "contact.message": "¡Hola! ¿En qué puedo ayudarte? Estoy disponible para proyectos freelance, colaboraciones open source o simplemente para charlar sobre tecnología.",
+    "contact.whatsapp": "WhatsApp",
+    "contact.waUrl": "https://wa.me/595994863459?text=Hola%20David%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20contactarte.",
     "footer.rights": "© 2026 David Villar. Paraguay.",
     "page.about": "Sobre mí",
     "page.work": "Proyectos",
@@ -75,6 +77,7 @@ window.I18N = {
     "aboutPage.links.github": "<h3><a href=\"https://github.com/DavidVillarM\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">GitHub</a></h3><p>— Proyectos open source y colaboraciones.</p>",
     "aboutPage.links.linkedin": "<h3><a href=\"https://www.linkedin.com/in/davidvillarm\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">LinkedIn</a></h3><p>— Perfil profesional y red de contactos.</p>",
     "aboutPage.links.instagram": "<h3><a href=\"https://www.instagram.com/david_villarm\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">Instagram</a></h3><p>— Vida personal y proyectos.</p>",
+    "aboutPage.links.whatsapp": "<h3><a href=\"https://wa.me/595994863459\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">WhatsApp</a></h3><p>— Contacto directo: +595 994 863459</p>",
     "aboutPage.current": "Actual",
     "theme.light": "Modo claro",
     "theme.dark": "Modo oscuro",
@@ -121,6 +124,8 @@ window.I18N = {
     "stack.viewProjects": "View projects",
     "contact.label": "Contact",
     "contact.message": "Hey! How can I help? I'm available for freelance projects, open source collaborations, or just to talk about technology.",
+    "contact.whatsapp": "WhatsApp",
+    "contact.waUrl": "https://wa.me/595994863459?text=Hi%20David%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20get%20in%20touch.",
     "footer.rights": "© 2026 David Villar. Paraguay.",
     "page.about": "About",
     "page.work": "Work",
@@ -156,6 +161,7 @@ window.I18N = {
     "aboutPage.links.github": "<h3><a href=\"https://github.com/DavidVillarM\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">GitHub</a></h3><p>— Open source projects and collaborations.</p>",
     "aboutPage.links.linkedin": "<h3><a href=\"https://www.linkedin.com/in/davidvillarm\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">LinkedIn</a></h3><p>— Professional profile and network.</p>",
     "aboutPage.links.instagram": "<h3><a href=\"https://www.instagram.com/david_villarm\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">Instagram</a></h3><p>— Personal life and projects.</p>",
+    "aboutPage.links.whatsapp": "<h3><a href=\"https://wa.me/595994863459\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit;\">WhatsApp</a></h3><p>— Direct contact: +595 994 863459</p>",
     "aboutPage.current": "Current",
     "theme.light": "Light mode",
     "theme.dark": "Dark mode",
@@ -198,6 +204,10 @@ window.I18n = {
 
     document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
       el.setAttribute("aria-label", this.t(el.getAttribute("data-i18n-aria")));
+    });
+
+    document.querySelectorAll("[data-i18n-href]").forEach((el) => {
+      el.setAttribute("href", this.t(el.getAttribute("data-i18n-href")));
     });
 
     const metaDesc = document.querySelector('meta[name="description"]');
