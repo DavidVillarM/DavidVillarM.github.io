@@ -142,17 +142,18 @@ window.PROJECTS = [
   {
     id: "viborita",
     url: "https://github.com/DavidVillarM/Juego-de-la-Viborita",
-    type: "phone-code",
+    type: "code",
     featured: false,
-    title: { es: "Juego de la Viborita", en: "Snake Game" },
+    title: { es: "SNAKE Assembler EMU8086", en: "SNAKE Assembler EMU8086" },
     desc: {
-      es: "Snake clásico en ensamblador (EMU8086)",
-      en: "Classic Snake in assembly (EMU8086)",
+      es: "Perfeccionando mi entendimiento de Lenguaje Ensamblador",
+      en: "Perfecting my understanding of Assembly Language",
     },
-    phoneContent: `<span style="color:#0f0;">SNAKE</span><br>
-<span style="color:#fff;">########</span><br>
-<span style="color:#fff;">#</span><span style="color:#0f0;">oo</span><span style="color:#fff;">  #</span><br>
-<span style="color:#888;">SCORE: 12</span>`,
+    code: `<span class="cm">; EMU8086 — Snake</span><br>
+<span class="kw">mov</span> <span class="fn">ah</span>, 09h<br>
+<span class="kw">lea</span> <span class="fn">dx</span>, snake_msg<br>
+<span class="kw">int</span> 21h<br>
+<span class="fn">draw_snake</span> <span class="kw">proc</span>`,
   },
   {
     id: "wordle",
@@ -167,19 +168,6 @@ window.PROJECTS = [
     phoneContent: `<span style="display:inline-block;width:14px;height:14px;background:#538d4e;border-radius:2px;margin:1px;"></span>
 <span style="display:inline-block;width:14px;height:14px;background:#b59f3b;border-radius:2px;margin:1px;"></span>
 <span style="display:inline-block;width:14px;height:14px;background:#3a3a3c;border-radius:2px;margin:1px;"></span>`,
-  },
-  {
-    id: "basal",
-    url: "https://github.com/DavidVillarM/calculadoraBasal.github.io",
-    type: "phone-code",
-    featured: false,
-    title: { es: "Calculadora Basal", en: "Basal Calculator" },
-    desc: {
-      es: "Calculadora de metabolismo basal en JavaScript",
-      en: "Basal metabolic rate calculator in JavaScript",
-    },
-    phoneContent: `<span style="color:#888;font-size:8px;">Basal</span><br>
-<span style="color:#fff;font-size:14px;font-weight:bold;">1,420</span>`,
   },
 ];
 
